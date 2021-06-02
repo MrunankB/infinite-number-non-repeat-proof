@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>APCD - Any Pixel Can Dance</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <h1>APCD - Any Pixel Can Dance</h1>
+   
+
+    <p id="tutorial">Click to place a cell and hit s to start and stop the simulation. Hit g to toggle the grid, hit f to go one step, hit r to generate a random simulation, and hit c to clear the simulation. (The buttons do what they say they do.)<p>
+
+
+    <button class="menu" onclick="if (isRunning) {isRunning = false; } else { isRunning = true; }">Start/Stop</button>
+    <button class="menu" onclick="frame = true; isRunning = false;">Frame by Frame</button>
+    <button class="menu" onclick="if (showGrid) {showGrid = false; } else {showGrid = true; }">Toggle Grid</button>
+    <button class="menu" onclick="for (var i = 0; i < gameF.nodes.length; i++) { if (gameF.nodes[i].key == 1) { gameF.nodes[i].key = 0; }} generations = 0;">Clear Simulation</button>
+    <button class="menu" onclick="for (var i = 0; i < gameF.nodes.length; i++) { gameF.nodes[i].key = Math.round(Math.random()) } generations = 0;">Randomize</button>
+    
+
+
+    <h2 id="generations">Generations: 0</h2>
+
+    <canvas onclick="clickUpdate(event)" id="canvas"><canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
